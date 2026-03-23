@@ -3,10 +3,8 @@ from openai import OpenAI
 import os
 from dotenv import load_dotenv
 
-# Load env
 load_dotenv()
 
-# Init client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Page config
