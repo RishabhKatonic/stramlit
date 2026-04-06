@@ -1,0 +1,12 @@
+{
+  "name": "katonic-node-react-test",
+  "version": "1.0.0",
+  "description": "Katonic App Deployment — Node/React Test App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
