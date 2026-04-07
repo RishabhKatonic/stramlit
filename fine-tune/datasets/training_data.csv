@@ -1,0 +1,29 @@
+instruction,input,output
+Summarize the following text.,Machine learning is a subset of artificial intelligence that enables systems to learn from data. It uses algorithms to identify patterns and make decisions with minimal human intervention.,Machine learning is an AI subset that learns from data using algorithms to find patterns and make decisions autonomously.
+Translate to French.,"Hello, how are you?","Bonjour, comment allez-vous ?"
+Classify the sentiment.,The movie was absolutely fantastic and I loved every minute.,Positive
+Classify the sentiment.,Terrible acting and a boring plot. Complete waste of time.,Negative
+Extract key entities.,"Apple Inc. announced a new iPhone model in Cupertino on September 12, 2024.","Organization: Apple Inc., Product: iPhone, Location: Cupertino, Date: September 12, 2024"
+Write a Python function.,Create a function that checks if a number is prime.,"def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True"
+Explain the concept.,What is gradient descent?,Gradient descent is an optimization algorithm that iteratively adjusts parameters by moving in the direction of steepest decrease of a loss function.
+Fix the grammar.,Me and him goes to the store yesterday for buy some foods.,He and I went to the store yesterday to buy some food.
+Generate a product description.,"Wireless earbuds, noise-cancelling, 8-hour battery, waterproof IPX5",Experience crystal-clear audio with our wireless noise-cancelling earbuds. Enjoy up to 8 hours of listening with IPX5 waterproof protection.
+Answer the question.,What is the capital of Japan?,The capital of Japan is Tokyo.
+Simplify the text.,The utilization of computational resources for the purpose of facilitating natural language understanding has undergone significant advancement.,Using computers to understand human language has improved significantly.
+Write a SQL query.,Get all users who signed up in the last 30 days from the users table.,"SELECT * FROM users WHERE signup_date >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY);"
+Classify the topic.,The Federal Reserve raised interest rates by 25 basis points in response to persistent inflation concerns.,Finance / Economics
+Classify the topic.,The new CRISPR gene-editing technique shows promise for treating sickle cell disease.,Science / Medicine
+Rewrite formally.,"Hey, just wanted to check if you got my email about the project deadline.","Dear colleague, I am writing to confirm whether you received my previous correspondence regarding the project deadline."
+Create a regex pattern.,Match email addresses.,"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+Explain to a 5-year-old.,How does the internet work?,The internet is like a really big web of invisible roads that connect all the computers in the world.
+Convert units.,How many kilometers is 26.2 miles?,26.2 miles is approximately 42.16 kilometers.
+Summarize the following text.,"Kubernetes is an open-source container orchestration platform that automates deploying, scaling, and managing containerized applications.","Kubernetes is an open-source platform that automates container deployment, scaling, and management."
+Write a haiku.,Theme: autumn,"Crimson leaves descend
+Cool wind whispers through the trees
+Autumn says farewell"

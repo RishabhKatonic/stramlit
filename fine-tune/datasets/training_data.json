@@ -1,0 +1,102 @@
+[
+  {
+    "instruction": "Summarize the following text.",
+    "input": "Machine learning is a subset of artificial intelligence that enables systems to learn from data. It uses algorithms to identify patterns and make decisions with minimal human intervention.",
+    "output": "Machine learning is an AI subset that learns from data using algorithms to find patterns and make decisions autonomously."
+  },
+  {
+    "instruction": "Translate to French.",
+    "input": "Hello, how are you?",
+    "output": "Bonjour, comment allez-vous ?"
+  },
+  {
+    "instruction": "Classify the sentiment.",
+    "input": "The movie was absolutely fantastic and I loved every minute.",
+    "output": "Positive"
+  },
+  {
+    "instruction": "Classify the sentiment.",
+    "input": "Terrible acting and a boring plot. Complete waste of time.",
+    "output": "Negative"
+  },
+  {
+    "instruction": "Extract key entities.",
+    "input": "Apple Inc. announced a new iPhone model in Cupertino on September 12, 2024.",
+    "output": "Organization: Apple Inc., Product: iPhone, Location: Cupertino, Date: September 12, 2024"
+  },
+  {
+    "instruction": "Write a Python function.",
+    "input": "Create a function that checks if a number is prime.",
+    "output": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True"
+  },
+  {
+    "instruction": "Explain the concept.",
+    "input": "What is gradient descent?",
+    "output": "Gradient descent is an optimization algorithm that iteratively adjusts parameters by moving in the direction of steepest decrease of a loss function."
+  },
+  {
+    "instruction": "Fix the grammar.",
+    "input": "Me and him goes to the store yesterday for buy some foods.",
+    "output": "He and I went to the store yesterday to buy some food."
+  },
+  {
+    "instruction": "Generate a product description.",
+    "input": "Wireless earbuds, noise-cancelling, 8-hour battery, waterproof IPX5",
+    "output": "Experience crystal-clear audio with our wireless noise-cancelling earbuds. Enjoy up to 8 hours of listening with IPX5 waterproof protection."
+  },
+  {
+    "instruction": "Answer the question.",
+    "input": "What is the capital of Japan?",
+    "output": "The capital of Japan is Tokyo."
+  },
+  {
+    "instruction": "Simplify the text.",
+    "input": "The utilization of computational resources for the purpose of facilitating natural language understanding has undergone significant advancement.",
+    "output": "Using computers to understand human language has improved significantly."
+  },
+  {
+    "instruction": "Write a SQL query.",
+    "input": "Get all users who signed up in the last 30 days from the users table.",
+    "output": "SELECT * FROM users WHERE signup_date >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY);"
+  },
+  {
+    "instruction": "Classify the topic.",
+    "input": "The Federal Reserve raised interest rates by 25 basis points in response to persistent inflation concerns.",
+    "output": "Finance / Economics"
+  },
+  {
+    "instruction": "Classify the topic.",
+    "input": "The new CRISPR gene-editing technique shows promise for treating sickle cell disease.",
+    "output": "Science / Medicine"
+  },
+  {
+    "instruction": "Rewrite formally.",
+    "input": "Hey, just wanted to check if you got my email about the project deadline.",
+    "output": "Dear colleague, I am writing to confirm whether you received my previous correspondence regarding the project deadline."
+  },
+  {
+    "instruction": "Create a regex pattern.",
+    "input": "Match email addresses.",
+    "output": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  },
+  {
+    "instruction": "Explain to a 5-year-old.",
+    "input": "How does the internet work?",
+    "output": "The internet is like a really big web of invisible roads that connect all the computers in the world."
+  },
+  {
+    "instruction": "Convert units.",
+    "input": "How many kilometers is 26.2 miles?",
+    "output": "26.2 miles is approximately 42.16 kilometers."
+  },
+  {
+    "instruction": "Summarize the following text.",
+    "input": "Kubernetes is an open-source container orchestration platform that automates deploying, scaling, and managing containerized applications.",
+    "output": "Kubernetes is an open-source platform that automates container deployment, scaling, and management."
+  },
+  {
+    "instruction": "Write a haiku.",
+    "input": "Theme: autumn",
+    "output": "Crimson leaves descend\nCool wind whispers through the trees\nAutumn says farewell"
+  }
+]

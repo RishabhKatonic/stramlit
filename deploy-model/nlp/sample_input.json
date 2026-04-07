@@ -1,0 +1,10 @@
+{
+  "texts": [
+    "This is great!",
+    "Terrible product"
+  ],
+  "expected": [
+    1,
+    0
+  ]
+}
