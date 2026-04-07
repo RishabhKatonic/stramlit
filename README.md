@@ -1,70 +1,49 @@
-# Katonic App Deployment — Test Apps
+# Katonic Job Templates — Test Suite
 
-Test applications for all 7 frameworks supported by Katonic 7.0 App Deployment.
+Unit tests for all job templates available in the Katonic Platform **Create Job** wizard.
 
-## Quick Reference
+## Job Templates Covered
 
-| Framework   | Port | Entry File   | Run Command                                      | Install Command              |
-|-------------|------|-------------|--------------------------------------------------|------------------------------|
-| Streamlit   | 8501 | `app.py`    | `streamlit run app.py --server.port=8501`        | `pip install -r requirements.txt` |
-| Dash        | 8050 | `app.py`    | `python app.py`                                  | `pip install -r requirements.txt` |
-| Gradio      | 7860 | `app.py`    | `python app.py`                                  | `pip install -r requirements.txt` |
-| FastAPI     | 8000 | `main.py`   | `uvicorn main:app --host 0.0.0.0 --port 8000`   | `pip install -r requirements.txt` |
-| Flask       | 5000 | `app.py`    | `flask run --host 0.0.0.0 --port 5000`          | `pip install -r requirements.txt` |
-| Node/React  | 3000 | `server.js` | `npm start`                                      | `npm install`                |
-| Docker      | 8080 | `app.py`    | Custom (from Dockerfile)                         | `docker build`               |
+| # | Template                  | Script Under Test       | Container Image                            | Command                                                        |
+|---|---------------------------|-------------------------|--------------------------------------------|----------------------------------------------------------------|
+| 1 | **Scheduled Report**      | `generate_report.py`    | `python:3.12-slim`                         | `python generate_report.py --format pdf`                       |
+| 2 | **Batch Prediction**      | `predict.py`            | `python:3.11-slim`                         | `python predict.py --model /models/latest --batch-size 256`    |
+| 3 | **Data Processing Pipeline** | `pipeline.py`        | `python:3.12-slim`                         | `python pipeline.py --input /data/raw --output /data/processed`|
+| 4 | **Data Quality Check**    | `validate.py`           | `python:3.12-slim`                         | `python validate.py --suite full --output /reports/dq`         |
+| 5 | **Knowledge Connector**   | `sync.py`               | `connectorsdk:connector-sdk-v2-python-3.11`| `python sync.py`                                               |
+| 6 | **ML Model Training**     | (user-defined)          | GPU-enabled image                          | (user-defined)                                                 |
+| 7 | **Hyperparameter Tuning** | (user-defined)          | GPU-enabled image                          | (user-defined)                                                 |
 
-## Repo Structure
+## Running Tests
 
-```
-katonic-app-test/
-├── README.md
-├── streamlit-test/
-│   ├── app.py
-│   └── requirements.txt
-├── dash-test/
-│   ├── app.py
-│   └── requirements.txt
-├── gradio-test/
-│   ├── app.py
-│   └── requirements.txt
-├── fastapi-test/
-│   ├── main.py              ← must be main.py (uvicorn main:app)
-│   └── requirements.txt
-├── flask-test/
-│   ├── app.py
-│   └── requirements.txt
-├── node-react-test/
-│   ├── server.js
-│   └── package.json
-└── docker-test/
-    ├── Dockerfile
-    ├── app.py
-    └── requirements.txt
+```bash
+# Run all tests
+python -m pytest job-tests/ -v
+
+# Run a single job's tests
+python -m pytest job-tests/scheduled-report/ -v
+python -m pytest job-tests/batch-prediction/ -v
+python -m pytest job-tests/data-processing-pipeline/ -v
+python -m pytest job-tests/data-quality-check/ -v
+python -m pytest job-tests/knowledge-connector/ -v
+python -m pytest job-tests/ml-model-training/ -v
+python -m pytest job-tests/hyperparameter-tuning/ -v
+
+# Run with unittest directly
+python -m unittest discover -s job-tests -p "test_*.py" -v
 ```
 
-## How to Deploy on Katonic
+## Test Categories
 
-1. Push this repo (or individual folders) to a GitHub repo
-2. Go to **Katonic Platform → App Deployment → Deploy App**
-3. Select the framework
-4. Provide the Git repo URL and branch
-5. Set the **script path** to the subfolder (e.g., `streamlit-test/app.py`)
-6. Allocate resources and deploy
+Each test file covers:
 
-## What Each Test App Validates
+- **Argument Parsing** — CLI flags, defaults, required args, invalid inputs
+- **Core Logic** — business logic for the specific job type (batching, transforms, sync, search spaces, etc.)
+- **Output / Reporting** — file generation, JSON serialization, report structure
+- **Error Handling** — bad inputs, missing files, retries, edge cases
+- **Container Environment** — Python version, GPU env vars, filesystem expectations
 
-Every app covers:
-- **Startup** — App starts and binds to the correct port
-- **Health check** — `/health` endpoint returns JSON status
-- **Environment** — Displays hostname, timestamp, framework info
-- **Interactivity** — At least one interactive feature (form, chart, API)
-- **Correct port** — Matches Katonic's expected framework port
+## Requirements
 
-## Notes
-
-- **FastAPI**: The file **must** be `main.py` because Katonic runs `uvicorn main:app`
-- **Flask**: Katonic uses `flask run`, which auto-discovers `app.py` via the `app` object
-- **Node/React**: Uses Express + inline React (CDN) — no build step needed
-- **Docker**: Uses pure Python stdlib (`http.server`) — zero external dependencies
-- **Gradio**: Uses `gr.Blocks` with tabbed interface for comprehensive testing
+- Python 3.10+ (tests are compatible across 3.10–3.12)
+- No external dependencies required (stdlib `unittest` only)
