@@ -1,0 +1,12 @@
+{
+  "texts": [
+    "Tech stocks surge on AI hype",
+    "Footballer scores winning goal",
+    "New album tops the charts"
+  ],
+  "expected": [
+    "technology",
+    "sports",
+    "entertainment"
+  ]
+}

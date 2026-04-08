@@ -1,0 +1,14 @@
+{
+  "texts": [
+    "Hello world",
+    "The cat is very big",
+    "Good morning my friend"
+  ],
+  "source_language": "en",
+  "target_language": "es",
+  "expected": [
+    "Hola mundo",
+    "El gato es muy grande",
+    "Bueno ma\u00f1ana mi amigo"
+  ]
+}

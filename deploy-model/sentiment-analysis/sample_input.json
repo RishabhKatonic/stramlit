@@ -1,0 +1,12 @@
+{
+  "texts": [
+    "This is wonderful!",
+    "Awful service",
+    "It was fine"
+  ],
+  "expected": [
+    "positive",
+    "negative",
+    "neutral"
+  ]
+}
