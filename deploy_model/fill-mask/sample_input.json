@@ -1,7 +1,0 @@
-{
-  "masked_texts": [
-    "The cat sat on the [MASK]",
-    "I love programming in [MASK]"
-  ],
-  "top_k": 3
-}
