@@ -1,6 +1,0 @@
-id,name,email,signup_date,amount
-1, Alice  ,alice@example.com,01/15/2024,100.50
-2,Bob,bob@example.com,02/20/2024,250.00
-3,Charlie,charlie@example.com,,75.25
-4,Alice,alice@example.com,01/15/2024,100.50
-5,Eve,,03/10/2024,500.00

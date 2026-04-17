@@ -1,2 +1,0 @@
-# Pure stdlib — no external deps needed. This file exists so the
-# default Job template `pip install -r requirements.txt` doesn't fail.

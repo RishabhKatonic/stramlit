@@ -1,3 +1,0 @@
-# Only needed for --format pdf (otherwise stdlib is enough).
-# Comment this line if you don't need PDF output.
-reportlab>=4.0

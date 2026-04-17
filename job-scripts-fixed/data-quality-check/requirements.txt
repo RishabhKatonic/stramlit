@@ -1,1 +1,0 @@
-# Pure stdlib. Kept as a placeholder so `pip install -r` succeeds.
